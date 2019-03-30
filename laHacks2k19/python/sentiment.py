@@ -1,6 +1,8 @@
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import json
 from constants import USA, UK, AUS, ARTICLES
+import numpy as np
+import matplotlib.pyplot as plt
 
 def getAllTitles():
     titles = []
@@ -31,15 +33,15 @@ def getMostFrequentTitles(jsonFile, cap=100):
     return titles
 
 
-def print_sentiment_scores(region):
+def getTitleSentiments(region):
   
+    titleSentiments = []
 
     titles = None
     print(region)
     if region == UK:
         titles = getMostFrequentTitles('../data/article_uk.json')
     elif region == AUS:
-
         titles = getMostFrequentTitles('../data/article_aus.json')
     else:
         titles = getMostFrequentTitles('../data/article_us.json')
@@ -47,9 +49,18 @@ def print_sentiment_scores(region):
     analyzer = SentimentIntensityAnalyzer()
     for title in titles:
         sentiment_score = analyzer.polarity_scores(title)
-        print("{:-<40} {}".format(title, str(sentiment_score)))
+        #print("{:-<40} {}".format(title, str(sentiment_score)))
+        titleSentiments.append((title,str(sentiment_score)))
 
-print_sentiment_scores(UK)
+    return titleSentiments
 
+
+def plotTitleSentiment(region):
+
+    a = getTitleSentiments(region)
+
+    print(a)
+
+plotTitleSentiment(USA)
 
 
