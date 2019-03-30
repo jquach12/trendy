@@ -9,4 +9,9 @@ def retrieve():
 	data = json.loads(r.text)
 	print(data['buckets'][0]['report']['publisher']['traffic']['totalTraffic'])
 
-retrieve()
+#retrieve()
+
+with open('us.json') as ukDataFile:
+	data = json.load(ukDataFile)
+
+	print(data['buckets'][1]['report']['publisher']['traffic']['totalTraffic'])
