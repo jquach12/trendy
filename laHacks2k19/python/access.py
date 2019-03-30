@@ -1,7 +1,8 @@
 import requests
 import json
-import ast
+from collections import Counter
 from constants import USA, UK, AUS
+
 
 def printFactoid(jsonFile):
 	with open(jsonFile) as dataFile:
@@ -32,7 +33,7 @@ def getTotalConsumption(jsonFile):
 		for b in buckets:
 			counter += b['report']['publisher']['traffic']['totalTraffic']
 
-	print(counter)
+	#print(counter)
 
 
 
@@ -44,5 +45,24 @@ def mostToLeastTraffic(jsonFile):
 	with open(jsonFile) as dataFile:
 		data = json.load(dataFile)
 
-printFactoid(USA)
+#printFactoid(USA)
+
+def getMostFrequentTopics(jsonFile):
+	with open(jsonFile) as dataFile:
+		data = json.load(dataFile)
+
+		buckets = data['buckets']
+
+
+		topicCounter = Counter()
+		for b in buckets:
+			for topic in b['report']['rollups']:
+				topicCounter[topic['name']] += 1
+		return topicCounter
+		
+		
+print(getMostFrequentTopics(AUS))
+
+
+
 
