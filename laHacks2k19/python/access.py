@@ -11,7 +11,21 @@ def retrieve():
 
 #retrieve()
 
-with open('us.json') as ukDataFile:
-	data = json.load(ukDataFile)
 
-	print(data['buckets'][1]['report']['publisher']['traffic']['totalTraffic'])
+
+
+def getTotalConsumption(jsonFile):
+	with open(jsonFile) as dataFile:
+		data = json.load(dataFile)
+
+		buckets = data['buckets']
+
+		counter = 0
+		for b in buckets:
+			counter += b['report']['publisher']['traffic']['totalTraffic']
+
+	print(counter)
+
+getTotalConsumption('us.json')
+getTotalConsumption('uk.json')
+getTotalConsumption('aus.json')
