@@ -1,5 +1,6 @@
 import requests
 import json
+import pprint
 from collections import Counter
 from constants import USA, UK, AUS
 
@@ -62,7 +63,26 @@ def getMostFrequentArticles(jsonFile):
 
 		return articleCounter
 
-print(getMostFrequentArticles(AUS))
+#print(getMostFrequentArticles(AUS))
+
+def getAllArticles():
+	articles = []
+
+	for region in [USA, UK, AUS]:
+		with open(region) as dataFile:
+			data = json.load(dataFile)
+			buckets = data['buckets']
+			for b in buckets:
+				for topic in b['report']['rollups']:
+					for article in topic['top_articles_on_network']:
+						if article not in articles:
+							articles.append(article)
+
+	return articles
+
+#getAllArticles()
+
+
 
 
 
