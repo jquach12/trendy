@@ -57,11 +57,14 @@ def getMostFrequentTopics(jsonFile):
 		topicCounter = Counter()
 		for b in buckets:
 			for topic in b['report']['rollups']:
-				topicCounter[topic['name']] += 1
+				topicCounter[topic['name']] += topic['traffic']['totalTraffic']
 		return topicCounter
-		
-		
+
 print(getMostFrequentTopics(AUS))
+
+def getMostFrequentArticles(jsonFile):
+	with open(jsonFile) as dataFile:
+		data = json.load(dataFile)
 
 
 
