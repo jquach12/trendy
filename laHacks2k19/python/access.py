@@ -15,7 +15,6 @@ def printFactoid(jsonFile):
 			print(b['report']['rollups'][0])
 
 def retrieve():
-
 	r = requests.get("https://us-central1-vision-migration.cloudfunctions.net/la_hacks_2019?market_code={}".format(AUS))
 	data = json.loads(r.text)
 	print(data['buckets'][0]['report']['publisher']['traffic']['totalTraffic'])
@@ -35,36 +34,36 @@ def getTotalConsumption(jsonFile):
 
 	#print(counter)
 
-
-
-getTotalConsumption(USA)
-getTotalConsumption(UK)
-getTotalConsumption(AUS)
-
-def mostToLeastTraffic(jsonFile):
-	with open(jsonFile) as dataFile:
-		data = json.load(dataFile)
-
-#printFactoid(USA)
-
 def getMostFrequentTopics(jsonFile):
 	with open(jsonFile) as dataFile:
 		data = json.load(dataFile)
-
 		buckets = data['buckets']
-
-
+		
 		topicCounter = Counter()
 		for b in buckets:
 			for topic in b['report']['rollups']:
 				topicCounter[topic['name']] += topic['traffic']['totalTraffic']
 		return topicCounter
 
-print(getMostFrequentTopics(AUS))
+#print(getMostFrequentTopics(AUS))
 
 def getMostFrequentArticles(jsonFile):
 	with open(jsonFile) as dataFile:
 		data = json.load(dataFile)
+		buckets = data['buckets']
+
+		articleCounter = Counter()
+		for b in buckets:
+			for topic in b['report']['rollups']:
+				for article in topic['top_articles_on_network']:
+					for k, _ in article.items():
+						articleCounter[k] += 1
+
+
+		return articleCounter
+
+print(getMostFrequentArticles(AUS))
+
 
 
 
