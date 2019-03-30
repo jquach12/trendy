@@ -1,3 +1,3 @@
-USA = 0
-UK = 1
-AUS = 3
+USA = '../data/us.json'
+UK = '../data/uk.json'
+AUS = '../data/aus.json'

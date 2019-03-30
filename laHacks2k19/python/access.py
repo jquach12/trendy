@@ -1,7 +1,7 @@
 import requests
 import json
 import ast
-from constants import *
+from constants import USA, UK, AUS
 
 def printFactoid(jsonFile):
 	with open(jsonFile) as dataFile:
@@ -36,13 +36,13 @@ def getTotalConsumption(jsonFile):
 
 
 
-getTotalConsumption('us.json')
-getTotalConsumption('uk.json')
-getTotalConsumption('aus.json')
+getTotalConsumption(USA)
+getTotalConsumption(UK)
+getTotalConsumption(AUS)
 
 def mostToLeastTraffic(jsonFile):
 	with open(jsonFile) as dataFile:
 		data = json.load(dataFile)
 
-printFactoid('us.json')
+printFactoid(USA)
 
