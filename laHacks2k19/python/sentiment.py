@@ -27,24 +27,29 @@ def getMostFrequentTitles(jsonFile, cap=100):
                 if k in frequentArticles:
                     titles.append(v)
 
+    print(titles)
     return titles
 
 
-
 def print_sentiment_scores(region):
-    with open(region, 'r') as dataFile:
-        data = json.load(dataFile)
+  
 
-        print(data)
+    titles = None
+    print(region)
+    if region == UK:
+        titles = getMostFrequentTitles('../data/article_uk.json')
+    elif region == AUS:
 
+        titles = getMostFrequentTitles('../data/article_aus.json')
+    else:
+        titles = getMostFrequentTitles('../data/article_us.json')
 
-    titles = getAllTitles()
     analyzer = SentimentIntensityAnalyzer()
     for title in titles:
         sentiment_score = analyzer.polarity_scores(title)
-        #print("{:-<40} {}".format(title, str(sentiment_score)))
+        print("{:-<40} {}".format(title, str(sentiment_score)))
 
-print(getMostFrequentTitles('../data/article_us.json'))
+print_sentiment_scores(UK)
 
 
 
