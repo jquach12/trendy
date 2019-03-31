@@ -4,6 +4,7 @@ import './styles.css';
 import lawData from '../../data/lawGovtPolitics.json';
 import sportsData from '../../data/sports.json';
 import techData from '../../data/tech.json';
+import travelData from '../../data/travel.json';
 import dataPairs from '../../data/lookup.json';
 
 export class Category extends Component {
@@ -29,14 +30,15 @@ export class Category extends Component {
       case "Law, Government, and Politics": data = lawData["law, govt and politics"]; break;
       case "Sports": data = sportsData["sports"]; break;
       case "Technology and Computing": data = techData["technology and computing"]; break;
-      default: data = techData["tech"];
+      case "Travel": data = travelData["travel"]; break;
+      default: data = lawData["law, govt and politics"];
 
     }
     console.log(data);
 
     let articlez = [];
 
-    const maxLength = 70
+    const maxLength = 65
     for (let i = 0; i < 6; i++) {
       const url = data[Math.floor(Math.random() * data.length)];
       let title = dataPairs[url];

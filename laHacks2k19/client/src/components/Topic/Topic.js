@@ -11,13 +11,13 @@ export class Topic extends Component {
         {this.props.isVisible ? 
           <div>
             <div className="row">
-              <TopicSection name={"australia"} isVisible = {this.props.isVisible}/>
+              <TopicSection name={"Trump"} isVisible = {this.props.isVisible}/>
             </div>
             <div className="row">
-              <TopicSection name={"first sight"} isVisible = {this.props.isVisible}/>
+              <TopicSection name={"Mueller"} isVisible = {this.props.isVisible}/>
             </div>
             <div className="row">
-              <TopicSection name={"pauline hanson"} isVisible = {this.props.isVisible}/>
+              <TopicSection name={"USA"} isVisible = {this.props.isVisible}/>
             </div>
           </div>
           : null

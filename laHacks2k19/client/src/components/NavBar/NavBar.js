@@ -13,21 +13,7 @@ export class NavBar extends Component {
       <div className="container">
         <a href="/" ><img src={logo} width="5%"></img></a>
         <div className="region"> 
-          <button 
-            className={this.isActive("us")}
-            onClick={this.props.changeRegion.bind(this, 'us')}> 
-            US
-          </button>
-          <button 
-            className={this.isActive("uk")}
-            onClick={this.props.changeRegion.bind(this, 'uk')}> 
-            UK
-          </button>
-          <button 
-            className={this.isActive("au")}
-            onClick={this.props.changeRegion.bind(this, 'au')}> 
-            AU
-          </button>
+          <h2> Trendy</h2>
         </div>
       </div>
     )

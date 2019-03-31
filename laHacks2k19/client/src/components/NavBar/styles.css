@@ -37,3 +37,9 @@
 .active {
   text-decoration: underline;
 }
+
+h2 {
+  color:rgb(152,164,189);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: larger;
+}
