@@ -2,7 +2,7 @@ import requests
 import json
 import pprint
 from collections import Counter
-from constants import USA, UK, AUS
+from constants import USA, UK, AUS, HOT_TOPICS_USA, HOT_TOPICS_UK, HOT_TOPICS_AUS
 
 
 def printFactoid(jsonFile):
@@ -81,6 +81,46 @@ def getAllArticles():
 	return articles
 
 #getAllArticles()
+
+def getArticlesForName(region, hotTopic):
+	frontArticles = []
+
+	with open(region) as dataFile:
+		data = json.load(dataFile)
+		buckets = data['buckets']
+ 
+		for b in buckets:
+			for topic in b['report']['rollups']:
+				if topic['name'] in hotTopic.keys():
+					print(topic['name'])
+
+					for art in topic['top_articles_on_network']:
+						for k, v in art.items():
+							if not v:
+								v = 'untitled'
+							someD = dict()
+							someD[topic['name']] = k + '||' + v
+							frontArticles.append(someD)
+
+	res = dict()
+	for a in frontArticles:
+		for k, v in a.items():
+			if k not in res:
+				res[k] = [v]
+			else:
+				res[k].append(v)
+
+				res[k] = list(set(res[k]))
+	return res
+
+b = getArticlesForName(AUS,HOT_TOPICS_AUS)
+
+print(b)
+
+
+
+
+
 
 
 
