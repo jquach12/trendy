@@ -3,12 +3,13 @@ import TopicSection from './TopicSection';
 
 export class Topic extends Component {
   render() {
+    console.log(this.props);
     return (
       <div>
-        Hello there! { false ? "I'm Howard" : "I'm brian" }
-        <br />
-        Region: {this.props.region}
-        <TopicSection />
+        {this.props.isVisible ? 
+          <TopicSection isVisible = {this.props.isVisible}/>
+          : null
+        }
       </div>
     )
   }

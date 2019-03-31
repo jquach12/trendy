@@ -27,6 +27,7 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <div className="App">
         <NavBar changeRegion={this.changeRegion}/>
@@ -42,7 +43,7 @@ class App extends Component {
           <div className="panels">
             {this.state.isCat 
               ? <Category /> 
-              : <Topic region = {this.state.region} /> 
+              : <Topic region = {this.state.region} isVisible = {!this.state.isCat} /> 
             }
           dsaf l;sad dsalk;hsdl ;fhsadf hsadi;hf sad; hfsda fhsdah fdsa;h fdsah fgsaud'fhgoasfasdufli jdsgfliydgfui;s gfdsay fgsady fgdsai ;f gasd u;fgdsau gi hdsiua fhdsu fasd; fhsdai fdsau fdsaui fgsadiufgas fldsy gfsdaysad
           </div>
