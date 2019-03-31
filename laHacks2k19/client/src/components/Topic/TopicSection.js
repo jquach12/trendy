@@ -24,7 +24,7 @@ export class TopicSection extends Component {
     let bouncer = new Set()
     const maxLength = 60;
 
-    const articlesPerPage = 32;
+    const articlesPerPage = 24;
     while (articlez.length < articlesPerPage) {
       const url = data[Math.floor(Math.random() * data.length)];
 
