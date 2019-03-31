@@ -18,14 +18,10 @@ export class Panel extends Component {
       <div>
         {this.props.isVisible ?
           (
-            <ul className = "panelList">
-              <li className = "panels">
-                <figure>
-                  <a href={this.props.link} target='_blank'><img className = 'topicImg'  src = {this.state.imgUrl} alt = "temp trump image" ></img></a>
-                  <figcaption > {this.props.title} </figcaption>
-                </figure>
-              </li>
-            </ul>
+            <figure className="imgFigure">
+              <a href={this.props.link} target='_blank'><img className = 'topicImg'  src = {this.state.imgUrl} alt = "temp trump image" ></img></a>
+              <figcaption > {this.props.title} asdfdsafds sdff sdfsd dsfsd</figcaption>
+            </figure>
           )
           : null
         }

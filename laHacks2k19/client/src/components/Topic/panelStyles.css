@@ -1,0 +1,16 @@
+.topicImg {
+    width:100%;
+    opacity: 1;
+    transition: .3s ease-in-out
+}
+
+.topicImg:hover {
+    opacity: .5;
+    transition: .3s ease-in-out;
+}
+
+.imgFigure {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
