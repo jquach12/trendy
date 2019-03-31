@@ -28,15 +28,20 @@ export class Category extends Component {
     switch(this.state.category){
       case "Law, Government, and Politics": data = lawData["law, govt and politics"]; break;
       case "Sports": data = sportsData["sports"]; break;
-      case "Technology and Computing": data = techData["tech"]; break;
+      case "Technology and Computing": data = techData["technology and computing"]; break;
+      default: data = techData["tech"];
+
     }
-    console.log();
+    console.log(data);
 
     let articlez = [];
 
+    const maxLength = 70
     for (let i = 0; i < 6; i++) {
       const url = data[Math.floor(Math.random() * data.length)];
-      const title = dataPairs[url];
+      let title = dataPairs[url];
+
+      if (title.length > maxLength) { title = title.substring(0, maxLength) + '...' }
       // const title="test";
       console.log(title, url); 
       articlez.push([title,url])
