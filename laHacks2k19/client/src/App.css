@@ -55,6 +55,8 @@ table {
 .sidenav {
 	flex: 1;
 	/* float: left; */
+	/* position: fixed; */
+	left: 0;
 }
 
 .panels {

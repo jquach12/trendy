@@ -4,6 +4,7 @@ import Topic from './components/Topic/Topic';
 import SideNav from './components/SideNav/SideNav';
 import Category from './components/Category/Category';
 import NavBar from './components/NavBar/NavBar';
+import Blog from './components/Blog/Blog'
 
 class App extends Component {
 
@@ -43,7 +44,10 @@ class App extends Component {
           </div>
           <div className="panels">
             {this.state.isCat 
-              ? <Category region = {this.state.region} category={this.state.category} isVisible = {this.state.isCat}/> 
+              ? (this.state.category==="Blog" 
+                ? <Blog />
+                : <Category region = {this.state.region} category={this.state.category} isVisible = {this.state.isCat}/> 
+                )
               : <Topic region = {this.state.region} isVisible = {!this.state.isCat} /> 
             }
           </div>
