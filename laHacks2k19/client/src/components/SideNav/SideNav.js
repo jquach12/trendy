@@ -54,8 +54,21 @@ export class SideNav extends Component {
           onClick={this.selectCategory.bind(this, "Travel")}>
           Travel
         </button>
-        <br></br>
-        <br></br>
+        <button 
+          className={this.isActive("Education")} 
+          onClick={this.selectCategory.bind(this, "Education")}>
+          Education
+        </button>
+        <button 
+          className={this.isActive("Art and Entertainment")} 
+          onClick={this.selectCategory.bind(this, "Art and Entertainment")}>
+          Art and Entertainment
+        </button>
+        <button 
+          className={this.isActive("Society")} 
+          onClick={this.selectCategory.bind(this, "Society")}>
+          Society
+        </button>
         <br></br>
         <br></br>
         <br></br>
