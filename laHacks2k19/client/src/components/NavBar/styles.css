@@ -1,0 +1,35 @@
+.container {
+  padding: 20px 50px;
+  background-color: red;
+}
+
+.container > a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30pt;
+}
+
+.region {
+  float: right;
+  padding-top: 5px;
+}
+
+.region > button {
+  color: white;
+  border: none;
+  background: inherit;
+  font-weight: bold;
+  font-size: 15pt;
+  outline: none;
+}
+
+.region > button:hover {
+  cursor: pointer;
+  text-decoration-color: white;
+  text-decoration: underline;
+}
+
+.region > button:active {
+  text-decoration: underline;
+}
