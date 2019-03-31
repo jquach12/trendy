@@ -31,7 +31,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <NavBar changeRegion={this.changeRegion}/>
+        <NavBar changeRegion={this.changeRegion} region={this.state.region} />
         <div className="main">
           <div className="sidenav"> 
 
