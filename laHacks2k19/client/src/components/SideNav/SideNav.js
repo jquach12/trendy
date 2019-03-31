@@ -79,7 +79,15 @@ export class SideNav extends Component {
         <br></br>
         <br></br>
         <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
 
+
+
+        
  
         <button id = "blog"
           className={this.isActive("Blog")} 

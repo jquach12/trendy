@@ -32,9 +32,10 @@ button.active {
 }
 
 button {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #blog {
   color: rgb(42, 68, 115);
+  font-size: 16pt;
 }
