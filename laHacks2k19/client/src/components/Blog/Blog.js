@@ -15,9 +15,10 @@ export class Blog extends Component {
         <br></br>
         <h2> Headlines </h2>
 
-        <div className="text"> Sociological studies have shown that people are likely to only engage with the titles of articles, which is to say that the titles of articles are becoming larger factors for increasing the Click-Through Rate of your article as titles alone are often enough for people to spread the news despite not reading the rest of the content. </div>
+        <div className="text"> Sociological studies have shown that people are likely to only engage with the titles of articles, which is to say that the titles of articles are becoming larger factors for increasing the Click-Through Rate of your article as titles alone are often enough for people to spread the news despite not reading the rest of the content.
+        Our team has found the most frequent words and phrases of articles across the regions. </div>
 
-        <div className="text"> Our team has found the most frequent words and phrases of articles across the regions. </div>
+
 
         <h3> Top Words in US Article Titles </h3>
 
