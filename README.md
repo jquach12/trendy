@@ -1,3 +1,9 @@
+# Home Page
+![home Page](laHacks2k19/sample/homePage.png)
+
+# Navigating Through a Category
+![Travel](laHacks2k19/sample/travel.png)
+
 ## Inspiration
 We are fascinated by how we get our news today. We remember watching the evening news on cable television as children; almost suddenly, the the world wide web has challenged news publishers to not only cover the next big thing, but to also lure their audience with attention-drawing topics and headliners.
 
