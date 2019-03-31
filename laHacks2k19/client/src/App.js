@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Topic from './components/Topic';
+import Topic from './components/Topic/Topic';
 import SideNav from './components/SideNav/SideNav';
 import Category from './components/Category';
 import NavBar from './components/NavBar/NavBar';
@@ -45,7 +45,6 @@ class App extends Component {
               ? <Category /> 
               : <Topic region = {this.state.region} isVisible = {!this.state.isCat} /> 
             }
-          dsaf l;sad dsalk;hsdl ;fhsadf hsadi;hf sad; hfsda fhsdah fdsa;h fdsah fgsaud'fhgoasfasdufli jdsgfliydgfui;s gfdsay fgsady fgdsai ;f gasd u;fgdsau gi hdsiua fhdsu fasd; fhsdai fdsau fdsaui fgsadiufgas fldsy gfsdaysad
           </div>
         </div>
       </div>

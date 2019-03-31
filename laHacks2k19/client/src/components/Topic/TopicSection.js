@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Panel from './Panel';
+import './panelStyles.css';
 
 export class TopicSection extends Component {
   constructor(props)
@@ -15,16 +16,15 @@ export class TopicSection extends Component {
     return (
       <div>
         {this.props.isVisible ?
-          <ul className = "topicList">
-              {this.state.articles.map((set, index) =>
-                <li className = "horizontalTopic" key = {set[0] + 'td' + index}>
-                  <Panel isVisible = {this.props.isVisible} key = {set[0] + index} title = {set[0]} link = {set[1]}/> 
-                </li>
-              )}        
-          </ul>
-            
-            
-          
+          this.state.articles.map((set, index) =>
+            <Panel 
+              key = {set[0] + 'td' + index} 
+              isVisible = {this.props.isVisible} 
+              key = {set[0] + index} 
+              title = {set[0]} 
+              link = {set[1]}
+            />
+          )  
           : null
         }
       </div>
