@@ -21,10 +21,11 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <div className="App">
         <NavBar changeRegion={this.changeRegion}/>
-        {this.state.isCat ? <Category /> : <Topic region = {this.state.region} /> }
+        {this.state.isCat ? <Category /> : <Topic isVisible = {!this.state.isCat} region = {this.state.region} /> }
         <SideNav catHandler = {this.catHandler} />
       </div>
     );
