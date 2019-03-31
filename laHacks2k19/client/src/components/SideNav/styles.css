@@ -1,0 +1,32 @@
+.links {
+  /* background: grey; */
+  height: 100%;
+  /* position: fixed; */
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+
+}
+
+.links > button {
+  color: grey;
+  border: none;
+  background: inherit;
+  font-weight: bold;
+  font-size: 12pt;
+  outline: none;
+  display: block;
+  padding: 12px 20px;
+  text-align: start;
+}
+
+.links > button:hover {
+  cursor: pointer;
+  background-color: lightgray;
+
+}
+
+.links > button:active {
+  background-color: lightgray;
+}

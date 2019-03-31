@@ -46,3 +46,18 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.main {
+	/* padding: 20px; */
+	display: flex;
+}
+
+.sidenav {
+	flex: 1;
+	float: left;
+}
+
+.panels {
+	flex: 4;
+	float: left;
+}
