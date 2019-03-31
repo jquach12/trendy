@@ -19,18 +19,18 @@ export class Topic extends Component {
     const entries = Object.entries(trendingTopics)
     console.log(entries)
 
-    let succeedingString = "Trending Topics: "
+    let headline = "Trending Topics: "
     for(let i = 0; i < 3; i++){
 
-      succeedingString += entries[i][0].charAt(0).toUpperCase() + entries[i][0].slice(1) + ' (';
+      headline += entries[i][0].charAt(0).toUpperCase() + entries[i][0].slice(1) + ' (';
       
-      if (entries[i][1] > 1000000) succeedingString += '1M+ hits) ';
-      else if (entries[i][1] > 340000) succeedingString += '340K+ hits) ';
-      else if (entries[i][1] > 300000) succeedingString += '300K+ hits) ';
-      else succeedingString += '100K+ hits)'
+      if (entries[i][1] > 1000000) headline += '1M+ hits) ';
+      else if (entries[i][1] > 340000) headline += '340K+ hits) ';
+      else if (entries[i][1] > 300000) headline += '300K+ hits) ';
+      else headline += '100K+ hits)'
 
     }
-    this.setState(()=>{return {trendingTopicHeadline: succeedingString};
+    this.setState(()=>{return {trendingTopicHeadline: headline};
     });
   }
 

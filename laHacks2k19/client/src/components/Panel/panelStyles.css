@@ -10,12 +10,16 @@
 }
 
 .imgFigure {
-    width: 25%;
+    width: 23%;
     display: block;
     float: left;
     padding: 10px;
+    min-height: 400px; /* solved jumping cards */
 }
 
 .caption {
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-weight: bold;
 }

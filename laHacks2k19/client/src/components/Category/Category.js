@@ -46,9 +46,9 @@ export class Category extends Component {
 
     let articlez = [];
     let bouncer = new Set()
-    const maxLength = 70
+    const maxLength = 60;
 
-    const articlesPerPage = 24;
+    const articlesPerPage = 32;
     while (articlez.length < articlesPerPage) {
       const url = data[Math.floor(Math.random() * data.length)];
 
