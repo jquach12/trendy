@@ -45,15 +45,26 @@ export class Category extends Component {
     console.log(data);
 
     let articlez = [];
+    let bouncer = new Set()
+    const maxLength = 70
 
-    const maxLength = 65
-    for (let i = 0; i < 6; i++) {
+    const articlesPerPage = 15;
+    while (articlez.length < articlesPerPage) {
       const url = data[Math.floor(Math.random() * data.length)];
+
+      if (typeof url === 'undefined' || url.length < 1) continue;
+      if(bouncer.has(url)) continue;
+
+      bouncer.add(url)
       let title = dataPairs[url];
 
+      // some do not have titles
+      if (typeof title === 'undefined') continue;
       if (title.length > maxLength) { title = title.substring(0, maxLength) + '...' }
+      else if (title.length < 1) title = "Untitled";
       // const title="test";
       console.log(title, url); 
+
       articlez.push([title,url])
     }
 
