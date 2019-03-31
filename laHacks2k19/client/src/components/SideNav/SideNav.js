@@ -32,47 +32,48 @@ export class SideNav extends Component {
         <button 
           className={this.isActive("Trending")} 
           onClick={this.selectTrending.bind(this, "Trending")}>
-          Trending
+         &#9839; Trending 
+
         </button>
         <button 
           className={this.isActive("Law, Government, and Politics")} 
           onClick={this.selectCategory.bind(this, "Law, Government, and Politics")}>
-          Law, Government, and Politics
+          &#9878; Law, Government, and Politics 
         </button>
         <button 
           className={this.isActive("Sports")} 
           onClick={this.selectCategory.bind(this, "Sports")}>
-          Sports
+          &#9918; Sports 
         </button>
         <button 
           className={this.isActive("Technology and Computing")} 
           onClick={this.selectCategory.bind(this, "Technology and Computing")}>
-          Technology and Computing
+          &#10121; Technology and Computing 
         </button>
         <button 
           className={this.isActive("Travel")} 
           onClick={this.selectCategory.bind(this, "Travel")}>
-          Travel
+          &#9992; Travel
         </button>
         <button 
           className={this.isActive("Education")} 
           onClick={this.selectCategory.bind(this, "Education")}>
-          Education
+          &#10000; Education
         </button>
         <button 
           className={this.isActive("Art and Entertainment")} 
           onClick={this.selectCategory.bind(this, "Art and Entertainment")}>
-          Art and Entertainment
+          &#9733; Art and Entertainment
         </button>
         <button 
           className={this.isActive("Business")} 
           onClick={this.selectCategory.bind(this, "Business")}>
-          Business
+          &#36; Business
         </button>
         <button 
           className={this.isActive("Society")} 
           onClick={this.selectCategory.bind(this, "Society")}>
-          Society
+           &#9787; Society
         </button>
         <br></br>
         <br></br>
