@@ -38,4 +38,5 @@ button {
 #blog {
   color: rgb(42, 68, 115);
   font-size: 16pt;
+  text-decoration-line: none;
 }
