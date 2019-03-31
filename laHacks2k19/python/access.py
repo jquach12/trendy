@@ -131,4 +131,21 @@ def getArticlesForCategory(region, category):
 
 	return {category : categoryArticles}
 
-print(getArticlesForCategory(USA, 'technology and computing'))
+
+def getAllArticleTitlePairs():
+	articles = dict()
+	for region in [USA, UK, AUS]:
+		with open(region) as dataFile:
+			data = json.load(dataFile)
+			buckets = data["buckets"]
+			for b in buckets:
+				for topic in b["report"]["rollups"]:
+					for article in topic["top_articles_on_network"]:
+						for k, v in article.items():
+							articles[k] = v
+
+	print(articles)
+
+	return articles
+
+getAllArticleTitlePairs()
