@@ -18,14 +18,13 @@ export class Panel extends Component {
       <div>
         {this.props.isVisible ?
           (
-            <figure className="imgFigure">
+            <div className="imgFigure">
               <a href={this.props.link} target='_blank'><img className = 'topicImg'  src = {this.state.imgUrl} alt = "temp trump image" ></img></a>
               <figcaption > {this.props.title} asdfdsafds sdff sdfsd dsfsd</figcaption>
-            </figure>
+            </div>
           )
           : null
         }
-        
       </div>
     )
   }

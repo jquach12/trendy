@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Panel from '../Panel/Panel';
+import './styles.css';
 
 export class TopicSection extends Component {
   constructor(props)
@@ -14,6 +15,7 @@ export class TopicSection extends Component {
     console.log(this.props);
     return (
       <div>
+        <h3>{this.props.name}</h3>
         {this.props.isVisible ?
           this.state.articles.map((set, index) =>
             <Panel 
@@ -21,8 +23,9 @@ export class TopicSection extends Component {
               key = {set[0] + index} 
               title = {set[0]} 
               link = {set[1]}
+              className="panel"
             />
-          )  
+          ) 
           : null
         }
       </div>

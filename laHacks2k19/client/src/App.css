@@ -54,10 +54,11 @@ table {
 
 .sidenav {
 	flex: 1;
-	float: left;
+	/* float: left; */
 }
 
 .panels {
 	flex: 4;
-	float: left;
+	/* float: left; */
+	padding: 10px;
 }

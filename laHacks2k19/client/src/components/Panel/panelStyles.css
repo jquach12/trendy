@@ -1,7 +1,7 @@
 .topicImg {
-    width:100%;
-    opacity: 1;
-    transition: .3s ease-in-out
+    width: 100%;
+    vertical-align: top;
+    padding: 10px;
 }
 
 .topicImg:hover {
@@ -10,7 +10,9 @@
 }
 
 .imgFigure {
+    width: 30%;
+    display: block;
     float: left;
-    width: 25%;
     padding: 10px;
 }
+
