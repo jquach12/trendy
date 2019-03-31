@@ -17,7 +17,6 @@ export class Topic extends Component {
 
   getData = () => {
     const entries = Object.entries(trendingTopics)
-    console.log(entries)
 
     let headline = "Trending Topics: "
     for(let i = 0; i < 3; i++){
@@ -39,7 +38,6 @@ export class Topic extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         {this.props.isVisible ? 
