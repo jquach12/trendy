@@ -1,0 +1,14 @@
+.blog {
+  padding: 20px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 30pt;
+  padding: 10px 0px;
+}
+
+.text {
+  font-size: 14pt;
+  line-height: 1.5rem;
+}
