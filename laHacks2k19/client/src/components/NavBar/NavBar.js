@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './styles.css';
+import logo from '../../assets/logo.png';
 
 export class NavBar extends Component {
 
@@ -10,7 +11,7 @@ export class NavBar extends Component {
   render() {
     return (
       <div className="container">
-        <a href="/" >Logo</a>
+        <a href="/" ><img src={logo} width="5%"></img></a>
         <div className="region"> 
           <button 
             className={this.isActive("us")}

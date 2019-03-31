@@ -1,22 +1,66 @@
 import React, { Component } from 'react'
 import Panel from '../Panel/Panel';
 import './styles.css';
+import lawData from '../../data/lawGovtPolitics.json';
+import sportsData from '../../data/sports.json';
+import techData from '../../data/tech.json';
+import dataPairs from '../../data/lookup.json';
 
 export class Category extends Component {
   constructor(props)
   {
     super(props);
+      // this.getData = this.getData.bind(this);
 
-    this.state = { 
-      articles: [['Trump becomes the president', 'https://shop.donaldjtrump.com/'], ['title2', 'https://www.amazon.com/slp/donald-trump-funny/q8uegx2smszp5uq'], ['title3' , 'https://awesomestufftobuy.com/donald-trump-gifts/']]
+      this.state = { 
+      // articles: [['Trump becomes the president', 'https://shop.donaldjtrump.com/'], ['title2', 'https://www.amazon.com/slp/donald-trump-funny/q8uegx2smszp5uq'], ['title3' , 'https://awesomestufftobuy.com/donald-trump-gifts/']]
+      articles: [],
+      category: this.props.category
     };
   }
+
+  getData = () => {
+    
+    let data;
+
+    this.setState({category: this.props.category})
+
+    switch(this.state.category){
+      case "Law, Government, and Politics": data = lawData["law, govt and politics"]; break;
+      case "Sports": data = sportsData["sports"]; break;
+      case "Technology and Computing": data = techData["tech"]; break;
+    }
+    console.log();
+
+    let articlez = [];
+
+    for (let i = 0; i < 6; i++) {
+      const url = data[Math.floor(Math.random() * data.length)];
+      const title = dataPairs[url];
+      // const title="test";
+      console.log(title, url); 
+      articlez.push([title,url])
+    }
+
+    console.log(articlez)
+    this.setState(()=>{return {articles: articlez};
+    });
+    console.log(this.state.articles);
+
   
+  }
+
+  componentDidMount() {
+    this.getData();
+  }
+
   render() {
+    
     return (
       <div className="main-content">
+        
         <p className="title">{this.props.category}</p>
-
+        
         {this.props.isVisible ?
           this.state.articles.map((set, index) =>
             <Panel 
