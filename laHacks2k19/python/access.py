@@ -142,6 +142,10 @@ def getAllArticleTitlePairs():
 				for topic in b["report"]["rollups"]:
 					for article in topic["top_articles_on_network"]:
 						for k, v in article.items():
+							if not v:
+								continue
+							v = v.replace("'","")
+							v = v.replace('"',"")
 							articles[k] = v
 
 	print(articles)
