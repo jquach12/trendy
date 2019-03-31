@@ -2,14 +2,31 @@ import React, { Component } from 'react'
 import './styles.css';
 
 export class NavBar extends Component {
+
+  isActive = (region) => {
+    return this.props.region===region ? "active" : "non-active";
+  }
+  
   render() {
     return (
       <div className="container">
         <a href="/" >Logo</a>
         <div className="region"> 
-          <button onClick={this.props.changeRegion.bind(this, 'us')}> US</button>
-          <button onClick={this.props.changeRegion.bind(this, 'uk')}> UK</button>
-          <button onClick={this.props.changeRegion.bind(this, 'au')}> AU</button>
+          <button 
+            className={this.isActive("us")}
+            onClick={this.props.changeRegion.bind(this, 'us')}> 
+            US
+          </button>
+          <button 
+            className={this.isActive("uk")}
+            onClick={this.props.changeRegion.bind(this, 'uk')}> 
+            UK
+          </button>
+          <button 
+            className={this.isActive("au")}
+            onClick={this.props.changeRegion.bind(this, 'au')}> 
+            AU
+          </button>
         </div>
       </div>
     )

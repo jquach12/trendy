@@ -27,6 +27,6 @@
 
 }
 
-.links > button:active {
+button.active {
   background-color: lightgray;
 }

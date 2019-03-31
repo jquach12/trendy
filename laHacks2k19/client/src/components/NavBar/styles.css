@@ -30,6 +30,6 @@
   text-decoration: underline;
 }
 
-.region > button:active {
+.active {
   text-decoration: underline;
 }
