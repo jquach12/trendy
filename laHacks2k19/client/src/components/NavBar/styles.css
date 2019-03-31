@@ -1,6 +1,10 @@
 .container {
-  padding: 20px 50px;
-  background-color: red;
+  padding: 20px 30px;
+  background-color: rgb(36, 69, 120);
+  position: sticky;
+  width: 96%;
+  top: 0;
+  z-index: 2;
 }
 
 .container > a {

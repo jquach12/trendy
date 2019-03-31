@@ -1,0 +1,26 @@
+.section {
+  /* background: blue; */
+  /* padding: 20px; */
+  height: auto;
+}
+
+.section::after {
+  clear: both;
+}
+
+h3 {
+  margin: 20px 20px;
+  font-size: 25pt;
+  /* font-weight: bold; */
+}
+
+.panel {
+  display: block;
+  float: left;
+}
+
+.row {
+  display: block;
+  width: 100%;
+  float: left;
+}
