@@ -10,7 +10,7 @@ class App extends Component {
   state = {
     region: "us",
     isCat: false,
-    category: "cat1"
+    category: "Law, Government, and Politics"
   }
 
   selectCategory = (category) => {
@@ -18,8 +18,9 @@ class App extends Component {
     this.setState({category});
   }
 
-  selectTrending = () => {
+  selectTrending = (category) => {
     this.setState({isCat: false});
+    this.setState({category})
   }
   
   changeRegion = (region) => {
@@ -37,7 +38,7 @@ class App extends Component {
           <SideNav 
             selectCategory={this.selectCategory} 
             selectTrending={this.selectTrending}
-            
+            category={this.state.category}
           />
           </div>
           <div className="panels">
