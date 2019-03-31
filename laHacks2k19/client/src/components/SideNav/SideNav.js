@@ -84,7 +84,7 @@ export class SideNav extends Component {
         <button id = "blog"
           className={this.isActive("Blog")} 
           onClick={this.selectCategory.bind(this, "Blog")}>
-          Blog
+          &#9998; Blog
         </button>
       </div>
     )
