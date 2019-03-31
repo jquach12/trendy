@@ -131,7 +131,7 @@ def getArticlesForCategory(region, category):
 
 	return {category : categoryArticles}
 
-print(getArticlesForCategory(UK, 'pets'))
+print(getArticlesForCategory(USA, 'unknown'))
 
 def getAllArticleTitlePairs():
 	articles = dict()

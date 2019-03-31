@@ -26,9 +26,16 @@
 .links > button:hover {
   cursor: pointer;
   background-color: lightgray;
-
 }
 
 button.active {
-  background-color: lightgray;
+  background-color: rgb(152, 164, 189);
+}
+
+button {
+  margin-bottom: 20px;
+}
+
+#blog {
+  color: rgb(42, 68, 115);
 }

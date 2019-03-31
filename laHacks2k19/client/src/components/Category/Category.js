@@ -7,6 +7,7 @@ import techData from '../../data/tech.json';
 import travelData from '../../data/travel.json';
 import educationData from '../../data/education.json'
 import artAndEntertainmentData from '../../data/artAndEntertainment.json'
+import businessAndIndustrialData from '../../data/business.json'
 import societyData from '../../data/society.json'
 import dataPairs from '../../data/lookup.json';
 
@@ -36,6 +37,7 @@ export class Category extends Component {
       case "Travel": data = travelData["travel"]; break;
       case "Education": data = educationData["education"]; break;
       case "Art and Entertainment" : data = artAndEntertainmentData['art and entertainment']; break;
+      case "Business" : data = businessAndIndustrialData['business and industrial']; break;
       case "Society" : data = societyData['society']; break;
       default: data = lawData["law, govt and politics"];
 

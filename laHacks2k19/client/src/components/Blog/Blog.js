@@ -31,7 +31,7 @@ export class Blog extends Component {
 
         <div className="text"><img src={cloudAUS} alt="image" /></div>
 
-        <div className="text"> What is interesting to note is that despite this variance in word choice, the titles of the top articles of all these regions have similar sentiment scores. </div>
+        <div className="text"> What is interesting to note is that despite this variance in word choice, the titles of the top articles of all these regions have similar sentiment scores (based on Valence Aware Dictionary and sEntiment Reasoner). </div>
 
         <h3> Title Sentiment Plot </h3>
 
