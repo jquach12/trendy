@@ -49,5 +49,15 @@ table {
 
 .main {
 	padding: 20px;
-	flex: 1 2;
+	display: flex;
+}
+
+.sidenav {
+	flex: 1;
+	float: left;
+}
+
+.panels {
+	flex: 4;
+	float: left;
 }

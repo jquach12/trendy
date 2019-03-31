@@ -31,14 +31,21 @@ class App extends Component {
       <div className="App">
         <NavBar changeRegion={this.changeRegion}/>
         <div className="main">
+          <div className="sidenav"> 
+
           <SideNav 
             selectCategory={this.selectCategory} 
-            selectTrending={this.selectTrending} 
+            selectTrending={this.selectTrending}
+            
           />
-          {this.state.isCat 
-            ? <Category /> 
-            : <Topic region = {this.state.region} /> 
-          }
+          </div>
+          <div className="panels">
+            {this.state.isCat 
+              ? <Category /> 
+              : <Topic region = {this.state.region} /> 
+            }
+          dsaf l;sad dsalk;hsdl ;fhsadf hsadi;hf sad; hfsda fhsdah fdsa;h fdsah fgsaud'fhgoasfasdufli jdsgfliydgfui;s gfdsay fgsady fgdsai ;f gasd u;fgdsau gi hdsiua fhdsu fasd; fhsdai fdsau fdsaui fgsadiufgas fldsy gfsdaysad
+          </div>
         </div>
       </div>
     );
