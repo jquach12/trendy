@@ -120,6 +120,7 @@ def plotTitleSentiment():
 
     plt.show()
 
-plotTitleSentiment()
+#plotTitleSentiment()
 
-
+a = getMostFrequentTitles('../data/article_aus.json',99999999)
+print(a)
