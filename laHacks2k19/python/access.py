@@ -9,16 +9,16 @@ def printFactoid(jsonFile):
 	with open(jsonFile) as dataFile:
 		data = json.load(dataFile)
 
-		buckets = data['buckets']
+		buckets = data["buckets"]
 
 		counter = 0
 		for b in buckets:
-			print(b['report']['rollups'][0])
+			print(b["report"]["rollups"][0])
 
 def retrieve():
 	r = requests.get("https://us-central1-vision-migration.cloudfunctions.net/la_hacks_2019?market_code={}".format(AUS))
 	data = json.loads(r.text)
-	print(data['buckets'][0]['report']['publisher']['traffic']['totalTraffic'])
+	print(data["buckets"][0]["report"]["publisher"]["traffic"]["totalTraffic"])
 
 #retrieve()
 
@@ -27,23 +27,23 @@ def getTotalConsumption(jsonFile):
 	with open(jsonFile) as dataFile:
 		data = json.load(dataFile)
 
-		buckets = data['buckets']
+		buckets = data["buckets"]
 
 		counter = 0
 		for b in buckets:
-			counter += b['report']['publisher']['traffic']['totalTraffic']
+			counter += b["report"]["publisher"]["traffic"]["totalTraffic"]
 
 	#print(counter)
 
 def getMostFrequentTopics(jsonFile):
 	with open(jsonFile) as dataFile:
 		data = json.load(dataFile)
-		buckets = data['buckets']
+		buckets = data["buckets"]
 		
 		topicCounter = Counter()
 		for b in buckets:
-			for topic in b['report']['rollups']:
-				topicCounter[topic['name']] += topic['traffic']['totalTraffic']
+			for topic in b["report"]["rollups"]:
+				topicCounter[topic["name"]] += topic["traffic"]["totalTraffic"]
 		return topicCounter
 
 #print(getMostFrequentTopics(AUS))
@@ -51,12 +51,12 @@ def getMostFrequentTopics(jsonFile):
 def getMostFrequentArticles(jsonFile):
 	with open(jsonFile) as dataFile:
 		data = json.load(dataFile)
-		buckets = data['buckets']
+		buckets = data["buckets"]
 
 		articleCounter = Counter()
 		for b in buckets:
-			for topic in b['report']['rollups']:
-				for article in topic['top_articles_on_network']:
+			for topic in b["report"]["rollups"]:
+				for article in topic["top_articles_on_network"]:
 					for k, _ in article.items():
 						articleCounter[k] += 1
 
@@ -71,10 +71,10 @@ def getAllArticles():
 	for region in [USA, UK, AUS]:
 		with open(region) as dataFile:
 			data = json.load(dataFile)
-			buckets = data['buckets']
+			buckets = data["buckets"]
 			for b in buckets:
-				for topic in b['report']['rollups']:
-					for article in topic['top_articles_on_network']:
+				for topic in b["report"]["rollups"]:
+					for article in topic["top_articles_on_network"]:
 						if article not in articles:
 							articles.append(article)
 
@@ -87,19 +87,18 @@ def getArticlesForName(region, hotTopic):
 
 	with open(region) as dataFile:
 		data = json.load(dataFile)
-		buckets = data['buckets']
+		buckets = data["buckets"]
  
 		for b in buckets:
-			for topic in b['report']['rollups']:
-				if topic['name'] in hotTopic.keys():
-					print(topic['name'])
+			for topic in b["report"]["rollups"]:
+				if topic["name"] in hotTopic.keys():
+					print(topic["name"])
 
-					for art in topic['top_articles_on_network']:
-						for k, v in art.items():
-							if not v:
-								v = 'untitled'
+					for art in topic["top_articles_on_network"]:
+						for k, _ in art.items():
+
 							someD = dict()
-							someD[topic['name']] = k + '||' + v
+							someD[topic["name"]] = k
 							frontArticles.append(someD)
 
 	res = dict()
@@ -113,18 +112,40 @@ def getArticlesForName(region, hotTopic):
 				res[k] = list(set(res[k]))
 	return res
 
-b = getArticlesForName(AUS,HOT_TOPICS_AUS)
-
-print(b)
+#b = getArticlesForName(UK,HOT_TOPICS_UK)
 
 
+def getArticlesForCategory(region, category):
+	categoryArticles = []
+
+	with open(region) as dataFile:
+		data = json.load(dataFile)
+		buckets = data["buckets"]
+
+		for b in buckets:
+			for topic in b["report"]["rollups"]:
+				if topic['category'] == category:
+					for article in topic["top_articles_on_network"]:
+						for k, _ in article.items():
+							categoryArticles.append(k)
+
+	return {category : categoryArticles}
 
 
+def getAllArticleTitlePairs():
+	articles = dict()
+	for region in [USA, UK, AUS]:
+		with open(region) as dataFile:
+			data = json.load(dataFile)
+			buckets = data["buckets"]
+			for b in buckets:
+				for topic in b["report"]["rollups"]:
+					for article in topic["top_articles_on_network"]:
+						for k, v in article.items():
+							articles[k] = v
 
+	print(articles)
 
+	return articles
 
-
-
-
-
-
+getAllArticleTitlePairs()
