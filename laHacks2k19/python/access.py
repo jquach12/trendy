@@ -112,21 +112,23 @@ def getArticlesForName(region, hotTopic):
 				res[k] = list(set(res[k]))
 	return res
 
-b = getArticlesForName(UK,HOT_TOPICS_UK)
+#b = getArticlesForName(UK,HOT_TOPICS_UK)
 
 
+def getArticlesForCategory(region, category):
+	categoryArticles = []
 
+	with open(region) as dataFile:
+		data = json.load(dataFile)
+		buckets = data["buckets"]
 
-print(b)
+		for b in buckets:
+			for topic in b["report"]["rollups"]:
+				if topic['category'] == category:
+					for article in topic["top_articles_on_network"]:
+						for k, _ in article.items():
+							categoryArticles.append(k)
 
+	return {category : categoryArticles}
 
-
-
-
-
-
-
-
-
-
-
+print(getArticlesForCategory(USA, 'technology and computing'))
