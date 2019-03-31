@@ -21,7 +21,9 @@ export class Topic extends Component {
     let headline = "Trending Topics: "
     for(let i = 0; i < 3; i++){
 
-      headline += entries[i][0].charAt(0).toUpperCase() + entries[i][0].slice(1) + ' (';
+      let topicName = entries[i][0]
+      if (topicName == 'usa') topicName = 'USA'
+      headline += topicName.charAt(0).toUpperCase() + topicName.slice(1) + ' (';
       
       if (entries[i][1] > 1000000) headline += '1M+ hits) ';
       else if (entries[i][1] > 340000) headline += '340K+ hits) ';
