@@ -4,7 +4,7 @@ export class SideNav extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.props.catHandler} >
+        <button onClick={() => this.props.catHandler()} >
           Cat 1
         </button>
       </div>

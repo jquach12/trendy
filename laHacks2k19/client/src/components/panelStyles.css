@@ -1,0 +1,22 @@
+.panelList {
+    list-style: none;
+}
+
+.topicList {
+    list-style: none;   
+}
+
+.horizontalTopic {
+    display: inline-flex;
+}
+
+.topicImg {
+    width:50%;
+    opacity: 1;
+    transition: .3s ease-in-out
+}
+
+.topicImg:hover {
+    opacity: .5;
+    transition: .3s ease-in-out;
+}
